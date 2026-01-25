@@ -194,8 +194,7 @@ CREATE TABLE IF NOT EXISTS inspeccion (
 
 
 -- ---------------------------------------------------------------------------------------------------------------------------
--- 16) MANTENIMIENTO (según diagrama)
-
+-- 16) MANTENIMIENTO 
 CREATE TABLE IF NOT EXISTS mantenimiento (
   id_mantenimiento INT AUTO_INCREMENT,
   placa_vehiculo   VARCHAR(10) NOT NULL,
@@ -215,7 +214,7 @@ CREATE TABLE IF NOT EXISTS mantenimiento (
 );
 
 -- --------------------------------------------------------------------------------------------------------------------------------------------
--- 17) HISTORIAL_MOVIMIENTO (según diagrama)
+-- 17) HISTORIAL_MOVIMIENTO 
 
 CREATE TABLE IF NOT EXISTS historial_movimiento (
   id_movimiento      INT AUTO_INCREMENT,
@@ -243,7 +242,7 @@ CREATE TABLE IF NOT EXISTS historial_movimiento (
 
 
 -- -------------------------------------------------------------------------------------------------------
--- 18) SANCION (según diagrama)
+-- 18) SANCION 
 
 CREATE TABLE IF NOT EXISTS sancion (
   id_sancion      INT AUTO_INCREMENT,
