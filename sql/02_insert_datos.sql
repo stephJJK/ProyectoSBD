@@ -145,33 +145,6 @@ CREATE TABLE IF NOT EXISTS factura (
     FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );
 
-CREATE TABLE IF NOT EXISTS factura (
-  id_factura           INT AUTO_INCREMENT,
-  id_contrato          INT NOT NULL,
-  id_cliente           INT NOT NULL,
-  numero_autorizacion  VARCHAR(30) NOT NULL,
-  subtotal             DECIMAL(9,2) NOT NULL,
-  iva                  DECIMAL(9,2) NOT NULL,
-  total                DECIMAL(9,2) NOT NULL,
-  fecha_emision        DATE NOT NULL,
-
-  CONSTRAINT pk_factura PRIMARY KEY (id_factura),
-
-  CONSTRAINT chk_factura_montos CHECK (
-    subtotal >= 0 AND iva >= 0 AND total >= 0
-  ),
-  CONSTRAINT chk_factura_total CHECK (
-    ABS(total - (subtotal + iva)) < 0.01
-  ),
-
-  CONSTRAINT fk_factura_contrato
-    FOREIGN KEY (id_contrato) REFERENCES contrato(id_contrato),
-
-  CONSTRAINT fk_factura_cliente
-    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
-);
-
-
 
 -- ---------------------------------------------------------------------------------------
 --15) INSPECCION 
